@@ -1,4 +1,4 @@
-# 🌿 Is-Discord-Invitation-BOT
+# 🌿 Is Discord Invitation - Discord BOT
 Bot checking if messages contain an invitation to a Discord server.
 
 # 🦊 How to use

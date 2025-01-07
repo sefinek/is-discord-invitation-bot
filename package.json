@@ -1,6 +1,6 @@
 {
   "name": "is-discord-invitation-bot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Discord bot written in Discord.js v14, checking if messages are an invitation to any Discord server.",
   "keywords": [
     "discord",
@@ -35,5 +35,9 @@
     "discord.js": "^14.17.2",
     "dotenv": "^16.4.7",
     "is-discord-invite": "^3.0.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "globals": "^15.14.0"
   }
 }
