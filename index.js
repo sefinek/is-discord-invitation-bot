@@ -14,7 +14,7 @@ client.on('messageCreate', async msg => {
 	if (msg.content.length <= 10) return; // Ignore messages that have less than 10 characters
 
 	const result = await isInvitation.online(msg.content); // Validate the received message using Discord API v10
-	if (!result) return console.log('An error occurred while validating the invitation.');
+	if (!result) return console.warn('An error occurred while validating the invitation.');
 
 	if (result.isInvitation) {
 		if (result.guild.id === msg.guild.id) {
