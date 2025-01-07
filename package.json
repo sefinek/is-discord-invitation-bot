@@ -16,13 +16,13 @@
     "discord.js",
     "is-discord-invitation"
   ],
-  "homepage": "https://github.com/sefinek24/is-discord-invitation-bot#readme",
+  "homepage": "https://github.com/sefinek/is-discord-invitation-bot#readme",
   "bugs": {
-    "url": "https://github.com/sefinek24/is-discord-invitation-bot/issues"
+    "url": "https://github.com/sefinek/is-discord-invitation-bot/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sefinek24/is-discord-invitation-bot.git"
+    "url": "git+https://github.com/sefinek/is-discord-invitation-bot.git"
   },
   "license": "MIT",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
