@@ -29,7 +29,7 @@ client.on('messageCreate', async msg => {
 			- **Guild name:** ${result.guild.name}
 			- **Guild ID:** \`${result.guild.id}\`
 			- **Inviter:** ${result.inviter.username} (${result.inviter.global_name})
-			- **Inviter ID:** \`${result.inviter.id}\``,
+			- **Inviter ID:** \`${result.inviter.id}\``
 		);
 
 		console.log('Message is an invitation!');
