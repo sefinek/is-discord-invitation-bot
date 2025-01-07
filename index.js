@@ -23,7 +23,7 @@ client.on('messageCreate', async msg => {
 		}
 
 		await msg.delete();
-		msg.channel.send(`
+		await msg.channel.send(`
 			${msg.author}, you cannot send any invitations on this server!
 		
 			- **Guild name:** ${result.guild.name}
