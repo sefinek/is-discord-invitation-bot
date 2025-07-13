@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('env-native').config();
 
 const { Client } = require('discord.js');
 const isInvitation = require('is-discord-invite');
