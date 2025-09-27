@@ -1,16 +1,16 @@
 process.loadEnvFile();
 
-const { Client } = require('discord.js');
+const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const isInvitation = require('is-discord-invite');
-const client = new Client({ intents: [1, 512, 32768] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
 
-client.on('ready', () => {
+client.on('clientReady', () => {
 	console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.on('messageCreate', async msg => {
-	if (msg.author.bot || msg.channel.type === 'dm') return; // Ignore messages from bots and private messages (user => bot)
+	if (msg.author.bot || msg.channel.isDMBased()) return; // Ignore messages from bots and private messages (user => bot)
 	if (msg.content.length <= 10) return; // Ignore messages that have less than 10 characters
 
 	const result = await isInvitation.online(msg.content); // Validate the received message using Discord API v10
