@@ -1,4 +1,4 @@
-require('env-native').config();
+process.loadEnvFile();
 
 const { Client } = require('discord.js');
 const isInvitation = require('is-discord-invite');
