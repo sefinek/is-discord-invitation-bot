@@ -6,35 +6,40 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 
 
 client.on('clientReady', () => {
-	console.log(`Logged in as ${client.user.tag}!`);
+	console.log(`Bot logged in as ${client.user.tag}\nMonitoring ${client.guilds.cache.size} servers for invitations...`);
 });
 
 client.on('messageCreate', async msg => {
-	if (msg.author.bot || msg.channel.isDMBased()) return; // Ignore messages from bots and private messages (user => bot)
-	if (msg.content.length <= 10) return; // Ignore messages that have less than 10 characters
+	if (msg.author.bot || msg.channel.isDMBased() || msg.content.length <= 10) return;
 
-	const result = await isInvitation.online(msg.content); // Validate the received message using Discord API v10
-	if (!result) return console.warn('An error occurred while validating the invitation.');
+	const result = await isInvitation.online(msg.content);
+	if (!result) return console.warn('API validation failed');
 
 	if (result.isInvitation) {
+		const serverIcon = result.guild.icon ? `https://cdn.discordapp.com/icons/${result.guild.id}/${result.guild.icon}.png` : msg.author.displayAvatarURL();
+
 		if (result.guild.id === msg.guild.id) {
-			await msg.reply('This invitation is associated with this server. No actions have been taken.');
-			return console.log(`The user ${msg.author.username} sent an invitation associated with the server where the message was sent`);
+			await msg.reply({ embeds: [new EmbedBuilder()
+				.setColor('#00D26A')
+				.setAuthor({ name: '✅ Own Server Invitation', iconURL: serverIcon })
+				.setDescription('This invitation is associated with this server. No actions have been taken.')] });
+
+			return console.log(`Own server invitation detected: ${msg.author.username} (${msg.author.id}) -> ${msg.guild.name} (${msg.guild.id})`);
 		}
 
 		await msg.delete();
-		await msg.channel.send(`
-			${msg.author}, you cannot send any invitations on this server!
-		
-			- **Guild name:** ${result.guild.name}
-			- **Guild ID:** \`${result.guild.id}\`
-			- **Inviter:** ${result.inviter.username} (${result.inviter.global_name})
-			- **Inviter ID:** \`${result.inviter.id}\``
-		);
 
-		console.log('Message is an invitation!');
-	} else {
-		console.log('Message is not an invitation.');
+		await msg.channel.send({ embeds: [new EmbedBuilder()
+			.setColor('#F92F60')
+			.setAuthor({ name: '❌ Invitation Detected', iconURL: serverIcon })
+			.setDescription(`${msg.author}, you cannot send any invitations on this server!`)
+			.addFields(
+				{ name: '🏰 Guild Name', value: result.guild.name, inline: true },
+				{ name: '🆔 Guild ID', value: `\`${result.guild.id}\``, inline: true },
+				{ name: '🆔 Inviter ID', value: `\`${result.inviter.id}\``, inline: true }
+			)] });
+
+		console.log(`Invitation deleted: ${msg.author.username} (${msg.author.id}) -> ${result.guild.name} (${msg.guild.id})`);
 	}
 });
 
