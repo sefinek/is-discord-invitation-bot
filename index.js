@@ -2,11 +2,12 @@ process.loadEnvFile();
 
 const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const isInvitation = require('is-discord-invite');
+const { version } = require('./package.json');
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
 
 client.on('clientReady', () => {
-	console.log(`Bot logged in as ${client.user.tag}\nMonitoring ${client.guilds.cache.size} servers for invitations...`);
+	console.log(`Bot logged in as ${client.user.tag} (v${version})\nMonitoring ${client.guilds.cache.size} servers for invitations...`);
 });
 
 client.on('messageCreate', async msg => {
