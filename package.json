@@ -36,7 +36,7 @@
     "is-discord-invite": "^3.0.6"
   },
   "devDependencies": {
-    "@eslint/js": "^9.36.0",
+    "@eslint/js": "^9.37.0",
     "discord-api-types": "^0.38.26",
     "globals": "^16.4.0"
   }
