@@ -29,7 +29,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "up": "ncu -u && npm install && npm update && npm audit fix"
+    "m": "ncu -u && npm install && npm update"
   },
   "dependencies": {
     "discord.js": "^14.22.1",
