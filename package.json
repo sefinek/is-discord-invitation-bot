@@ -32,12 +32,12 @@
     "m": "ncu -u && npm install && npm update"
   },
   "dependencies": {
-    "discord.js": "^14.23.2",
+    "discord.js": "^14.25.1",
     "is-discord-invite": "^3.0.6"
   },
   "devDependencies": {
-    "@eslint/js": "^9.38.0",
-    "discord-api-types": "^0.38.30",
-    "globals": "^16.4.0"
+    "@eslint/js": "^9.39.2",
+    "discord-api-types": "^0.38.37",
+    "globals": "^17.0.0"
   }
 }
