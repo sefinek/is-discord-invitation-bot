@@ -28,16 +28,16 @@
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "m": "ncu -u && npm install && npm update"
+    "m": "ncu -u && npm install && npm update",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "discord.js": "^14.25.1",
     "is-discord-invite": "^3.0.6"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.2",
+    "@eslint/js": "^10.0.1",
     "discord-api-types": "^0.38.39",
-    "globals": "^17.0.0"
+    "globals": "^17.3.0"
   }
 }
