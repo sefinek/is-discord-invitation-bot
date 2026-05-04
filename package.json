@@ -32,7 +32,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "discord.js": "^14.25.1",
+    "discord.js": "^14.26.4",
     "is-discord-invite": "^3.0.6"
   },
   "devDependencies": {
