@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "discord.js": "^14.26.4",
-    "is-discord-invite": "^3.0.6"
+    "is-discord-invite": "^3.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
