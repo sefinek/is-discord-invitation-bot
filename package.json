@@ -1,21 +1,6 @@
 {
   "name": "is-discord-invitation-bot",
-  "version": "1.1.1",
-  "description": "A Discord bot written in Discord.js v14, checking if messages are an invitation to any Discord server.",
-  "keywords": [
-    "discord",
-    "discord-bot",
-    "discord-invitation",
-    "discord-invitation-bot",
-    "discord-invite",
-    "discord-invite-bot",
-    "discord-invites",
-    "discord-invites-bot",
-    "discord-invites-checker",
-    "discord-invites-checker-bot",
-    "discord.js",
-    "is-discord-invitation"
-  ],
+  "version": "1.1.2",
   "homepage": "https://github.com/sefinek/is-discord-invitation-bot#readme",
   "bugs": {
     "url": "https://github.com/sefinek/is-discord-invitation-bot/issues"
@@ -26,18 +11,19 @@
   },
   "license": "MIT",
   "author": "Sefinek <contact@sefinek.net> (https://sefinek.net)",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "m": "ncu -u && npm install && npm update",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "discord.js": "^14.25.1",
+    "discord.js": "^14.26.4",
     "is-discord-invite": "^3.0.6"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "discord-api-types": "^0.38.39",
-    "globals": "^17.3.0"
+    "discord-api-types": "^0.38.49",
+    "globals": "^17.6.0"
   }
 }
